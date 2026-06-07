@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 function Projects() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/projects")
-      .then((res) => {
-        setProjects(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const [projects, setProjects] = useState([
+    {
+      title: "Portfolio Website",
+      description: "Personal portfolio built using React and Node.js",
+      tech: "React, Express",
+    },
+    {
+      title: "AI Polite Rewriter",
+      description: "AI application that rewrites messages politely",
+      tech: "Python, Transformers",
+    },
+    {
+      title: "Inverted Index Search Engine",
+      description: "Fast document search engine using inverted indexing",
+      tech: "Python, Streamlit",
+    },
+  ]);
 
   return (
     <section id="projects">
